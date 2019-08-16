@@ -89,7 +89,7 @@ if [ $? -ne 0 ]; then echo -e """$RED""\xe2\x9c\x96"; else echo -e """$GREEN""\x
 
 # This is a hack, we have to install by hand so lets delete it
 echo "Removing ESP32 cache"
-rm -rf ~/.arduino15/packages/esp32
+[ -d ~/.arduino15/packages/esp32 ] && rm -rf ~/.arduino15/packages/esp32
 echo -n "Current packages list:"
 [ -d ~/.arduino15/packages/ ] && ls ~/.arduino15/packages/
 
