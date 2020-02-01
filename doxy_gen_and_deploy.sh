@@ -59,9 +59,9 @@ fi
 cd $BUILD_DIR
 
 # The default version of doxygen is too old so we'll use a modern version
-wget -q https://cdn-learn.adafruit.com/assets/assets/000/067/405/original/doxygen-1.8.13.linux.bin.tar.gz
-tar -xf doxygen-1.8.13.linux.bin.tar.gz
-mv doxygen-1.8.13/bin/doxygen .
+wget -q https://netix.dl.sourceforge.net/project/doxygen/rel-1.8.17/doxygen-1.8.17.linux.bin.tar.gz
+tar -xf doxygen-1.8.17.linux.bin.tar.gz
+mv doxygen-1.8.17/bin/doxygen .
 chmod +x doxygen
 
 # Create a clean working directory for this script.
