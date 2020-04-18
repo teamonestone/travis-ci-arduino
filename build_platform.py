@@ -37,7 +37,8 @@ ALL_PLATFORMS={
     "esp8266" : "esp8266:esp8266:huzzah:eesz=4M3M,xtal=80",
     "esp32" : "esp32:esp32:featheresp32:FlashFreq=80",
     # Adafruit AVR
-    "trinket" : "adafruit:avr:trinket5",
+    "trinket_3v" : "adafruit:avr:trinket3",
+    "trinket_5v" : "adafruit:avr:trinket5",
     "gemma" : "arduino:avr:gemma",
     "cpc" : "arduino:avr:circuitplay32u4cat",
     # Adafruit SAMD
@@ -97,6 +98,8 @@ def install_platform(platform):
     print("Installing", platform, end=" ")
     if platform == "adafruit:samd":   # we have a platform dep
         install_platform("arduino:samd")
+    if platform == "adafruit:avr":   # we have a platform dep
+        install_platform("arduino:avr")
     if os.system("arduino-cli core install "+platform+" --additional-urls "+BSP_URLS+" > /dev/null") != 0:
         ColorPrint.print_fail("FAILED to install "+platform)
         exit(-1)
